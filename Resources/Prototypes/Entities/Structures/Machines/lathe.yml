@@ -290,6 +290,7 @@
     - Dropper
     - ClothingEyesGlassesChemical
     dynamicRecipes:
+      - WeaponLaserGun # RonStation - Laser Balance
       - PowerDrill
       - MiningDrill
       - MiningDrillDiamond
@@ -739,6 +740,8 @@
       - WeaponLaserCarbinePractice
       - Zipties
     dynamicRecipes:
+      - WeaponLaserGun # RonStation - Laser Balance
+      - WeaponLaserSvalinn # RonStation - Laser Balance
       - BoxBeanbag
       - BoxShotgunIncendiary
       - BoxShotgunUranium

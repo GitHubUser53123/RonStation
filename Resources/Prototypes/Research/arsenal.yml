@@ -45,7 +45,8 @@
   tier: 1
   cost: 7500
   recipeUnlocks:
-  - WeaponLaserCarbine
+  - WeaponLaserGun
+  - WeaponLaserSvalinn
 
 - type: technology
   id: NonlethalAmmunition
@@ -140,18 +141,7 @@
   cost: 10000
   recipeUnlocks:
   - WeaponLaserCannon
-
-- type: technology
-  id: WaveParticleHarnessing
-  name: research-technology-wave-particle-harnessing
-  icon:
-    sprite: Objects/Weapons/Guns/Battery/xray.rsi
-    state: icon
-  discipline: Arsenal
-  tier: 2
-  cost: 10000
-  recipeUnlocks:
-  - WeaponXrayCannon
+  - WeaponLaserCarbine
 
 - type: technology
   id: BasicShuttleArmament
@@ -178,6 +168,18 @@
 # Tier 3
 
 - type: technology
+  id: WaveParticleHarnessing
+  name: research-technology-wave-particle-harnessing
+  icon:
+    sprite: Objects/Weapons/Guns/Battery/xray.rsi
+    state: icon
+  discipline: Arsenal
+  tier: 3 # RonStation - Laser Balance
+  cost: 10000
+  recipeUnlocks:
+  - WeaponXrayCannon
+
+- type: technology
   id: PortableMicrofusionWeaponry
   name: research-technology-portable-microfusion-weaponry
   icon:
@@ -189,18 +191,6 @@
   recipeUnlocks:
   - WeaponAdvancedLaser
   - PortableRecharger
-
-- type: technology
-  id: ExperimentalBatteryAmmo
-  name: research-technology-experimental-battery-ammo
-  icon:
-    sprite: Objects/Weapons/Guns/Battery/svalinn.rsi
-    state: icon
-  discipline: Arsenal
-  tier: 3
-  cost: 15000
-  recipeUnlocks:
-  - WeaponLaserSvalinn
 
 - type: technology
   id: AdvancedShuttleWeapon

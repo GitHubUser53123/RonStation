@@ -244,5 +244,5 @@
   components:
   - type: StorageFill
     contents:
-    - id: WeaponLaserCarbine
+    - id: WeaponAssaultLaserRifle # RonStation - Laser Balance, ID not changed because it might be tied to something later and i dont want it to conflict with that
       amount: 3

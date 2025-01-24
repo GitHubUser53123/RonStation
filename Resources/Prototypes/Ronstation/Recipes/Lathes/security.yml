@@ -1,0 +1,8 @@
+- type: latheRecipe
+  parent: BaseWeaponRecipeLong
+  id: WeaponLaserGun
+  result: WeaponLaserGun
+  materials:
+    Steel: 1000
+    Glass: 500
+    Plastic: 500

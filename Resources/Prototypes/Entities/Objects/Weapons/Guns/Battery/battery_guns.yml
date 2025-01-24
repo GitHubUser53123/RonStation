@@ -103,7 +103,7 @@
     - Belt
 
 - type: entity
-  name: svalinn laser pistol
+  name: LSE svalinn laser pistol
   parent: [ BaseWeaponPowerCellSmall, BaseRestrictedContraband ]
   id: WeaponLaserSvalinn
   description: A cheap and widely used laser pistol.
@@ -124,11 +124,13 @@
     zeroVisible: true
 
 - type: entity
-  name: retro laser blaster
+  name: LSE-75-LP retro laser blaster
   parent: [ BaseWeaponBatterySmall, BaseMajorContraband ]
   id: WeaponLaserGun
   description: A weapon using light amplified by the stimulated emission of radiation.
   components:
+  - type: Gun # RonStation - Laser Balance
+    firerate: 1 # RonStation - Laser Balance
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/laser_retro.rsi
     layers:
@@ -139,7 +141,7 @@
       shader: unshaded
   - type: HitscanBatteryAmmoProvider
     proto: RedMediumLaser
-    fireCost: 62.5
+    fireCost: 75
   - type: MagazineVisuals
     magState: mag
     steps: 5
@@ -147,7 +149,7 @@
   - type: Appearance
 
 - type: entity
-  name: makeshift laser pistol
+  name: makeshift laser pistol # name not changed because it's makeshift
   parent: BaseWeaponBatterySmall
   id: WeaponMakeshiftLaser
   description: Better pray it won't burn your hands off.
@@ -164,13 +166,13 @@
     sprite: Objects/Weapons/Guns/Battery/makeshift.rsi
   - type: HitscanBatteryAmmoProvider
     proto: RedLaser
-    fireCost: 62.5
+    fireCost: 100 # RonStation - Laser Balance
   - type: Battery
     maxCharge: 500
     startingCharge: 500
 
 - type: entity
-  name: tesla gun
+  name: PRJ-300-HP tesla gun # RonStation - Laser Balance
   parent: BaseWeaponBattery
   id: WeaponTeslaGun
   description: The power of the primordial element of lightning in your hands.
@@ -184,22 +186,33 @@
         map: ["enum.GunVisualLayers.MagUnshaded"]
         shader: unshaded
   - type: Gun
-    projectileSpeed: 10
+    projectileSpeed: 25 # RonStation - Laser Balance
     soundGunshot:
       path: /Audio/Effects/Lightning/lightningshock.ogg
       params:
         variation: 0.2
+      firerate: 2 # RonStation - Laser Balance
+      selectedMode: SemiAuto # RonStation - Laser Balance
+      availableModes: # RonStation - Laser Balance
+      - FullAuto # RonStation - Laser Balance
+      - SemiAuto # RonStation - Laser Balance
   - type: ProjectileBatteryAmmoProvider
     proto: TeslaGunBullet
-    fireCost: 300
+    fireCost: 300 # RonStation - Laser Balance
   - type: MagazineVisuals
     magState: mag
     steps: 5
     zeroVisible: true
   - type: Appearance
+    maxCharge: 1200
+    startingCharge: 1200
+
+ # taken from ship guns, LSE-(cost per shot)-HP/LP (anything above 1000 = HP)
+ # LSE = laser
+ # PRJ = projectile
 
 - type: entity
-  name: practice laser rifle
+  name: LSE-100-LP practice laser rifle
   parent: [BaseWeaponBattery, BaseGunWieldable]
   id: WeaponLaserCarbinePractice
   description: This modified laser rifle fires nearly harmless beams in the 40-watt range, for target practice.
@@ -215,29 +228,31 @@
   - type: Clothing
     sprite: Objects/Weapons/Guns/Battery/laser_gun.rsi
   - type: Gun
+    fireRate: 3 # RonStation - Laser Balance
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
+    - FullAuto # RonStation - Laser Balance
   - type: HitscanBatteryAmmoProvider
     proto: RedLaserPractice
-    fireCost: 62.5
+    fireCost: 100 # RonStation - Laser Balance
   - type: StaticPrice
     price: 300
 
 - type: entity
-  name: laser rifle
+  name: LSE-100-LP laser rifle # RonStation - Laser Balance
   parent: [WeaponLaserCarbinePractice, BaseGunWieldable, BaseRestrictedContraband]
   id: WeaponLaserCarbine
-  description: Favoured by Nanotrasen Security for being cheap and easy to use.
+  description: Favoured by Nanotrasen Security for being cheap and easy to use. Equipped with fullauto at the cost of less shots overall. # RonStation - Laser Balance
   components:
   - type: StaticPrice
     price: 420
   - type: HitscanBatteryAmmoProvider
     proto: RedLaser
-    fireCost: 62.5
+    fireCost: 100 
 
 - type: entity
-  name: pulse pistol
+  name: LSE-200-HP pulse pistol # RonStation - Laser Balance
   parent: BaseWeaponBatterySmall
   id: WeaponPulsePistol
   description: A state of the art energy pistol favoured as a sidearm by the NT operatives.
@@ -266,7 +281,7 @@
     startingCharge: 2000
 
 - type: entity
-  name: pulse carbine
+  name: LSE-200-HP pulse carbine # RonStation - Laser Balance
   parent: [BaseWeaponBattery, BaseGunWieldable, BaseCentcommContraband]
   id: WeaponPulseCarbine
   description: A high tech energy carbine favoured by the NT-ERT operatives.
@@ -297,7 +312,7 @@
     startingCharge: 5000
 
 - type: entity
-  name: pulse rifle
+  name: LSE-100-HP pulse rifle # RonStation - Laser Balance
   parent: [BaseWeaponBattery, BaseGunWieldable]
   id: WeaponPulseRifle
   description: A weapon that is almost as infamous as its users.
@@ -324,7 +339,7 @@
     startingCharge: 40000
 
 - type: entity
-  name: laser cannon
+  name: LSE-150-HP laser cannon
   parent: [BaseWeaponBattery, BaseGunWieldable, BaseRestrictedContraband]
   id: WeaponLaserCannon
   description: A heavy duty, high powered laser weapon.
@@ -345,10 +360,13 @@
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: HitscanBatteryAmmoProvider
     proto: RedHeavyLaser
-    fireCost: 100
+    fireCost: 150 # RonStation - Laser Balance
+  - type: Battery # RonStation - Laser Balance
+    maxCharge: 1050 # RonStation - Laser Balance
+    startingCharge: 1050 # RonStation - Laser Balance
 
 - type: entity
-  name: portable particle decelerator
+  name: PRJ-500-HP portable particle decelerator # RonStation - Laser Balance
   parent: BaseWeaponBattery
   id: WeaponParticleDecelerator
   description: A portable particle decelerator capable of decomposing a tesla or singularity.
@@ -407,7 +425,7 @@
   - type: Appearance
 
 - type: entity
-  name: practice disabler
+  name: PRJ-100-LP practice disabler # RonStation - Laser Balance
   parent: BaseWeaponBatterySmall
   id: WeaponDisablerPractice
   description: A self-defense weapon that exhausts organic targets, weakening them until they collapse. This one has been undertuned for cadets making it mostly harmless.
@@ -445,7 +463,7 @@
     - Sidearm
 
 - type: entity
-  name: disabler
+  name: PRJ-100-LP disabler # RonStation - Laser Balance
   parent: [ WeaponDisablerPractice, BaseSecurityCommandContraband ]
   id: WeaponDisabler
   description: A self-defense weapon that exhausts organic targets, weakening them until they collapse.
@@ -473,7 +491,7 @@
     - Antagonists
 
 - type: entity
-  name: disabler SMG
+  name: PRJ-33-LP disabler SMG # RonStation - Laser Balance
   parent: [ BaseWeaponBattery, BaseRestrictedContraband ]
   id: WeaponDisablerSMG
   description: Advanced weapon that exhausts organic targets, weakening them until they collapse.
@@ -510,7 +528,7 @@
     price: 260
 
 - type: entity
-  name: taser
+  name: PRJ-200-LP taser # RonStation - Laser Balance
   parent: [ BaseWeaponBatterySmall, BaseRestrictedContraband ]
   id: WeaponTaser
   description: A low-capacity, energy-based stun gun used by security teams to subdue targets at range.
@@ -546,7 +564,7 @@
   - type: Appearance
 
 - type: entity
-  name: antique laser pistol
+  name: antique laser pistol # skipped because it's the antique gun
   parent: [BaseWeaponBatterySmall, BaseGrandTheftContraband]
   id: WeaponAntiqueLaser
   description: This is an antique laser pistol. All craftsmanship is of the highest quality. It is decorated with assistant leather and chrome. The object menaces with spikes of energy.
@@ -590,7 +608,7 @@
     # not putting a BlockMovement component here cause that's funny.
 
 - type: entity
-  name: advanced laser pistol
+  name: LSE-100-LP advanced laser pistol
   parent: [ BaseWeaponBatterySmall, BaseRestrictedContraband]
   id: WeaponAdvancedLaser
   description: An experimental high-energy laser pistol with a self-charging nuclear battery.
@@ -625,7 +643,7 @@
     price: 63
 
 - type: entity
-  name: C.H.I.M.P. handcannon
+  name: C.H.I.M.P. handcannon # skipped because its chimp.
   parent: [BaseWeaponBatterySmall, BaseScienceContraband]
   id: WeaponPistolCHIMP
   description: Just because it's a little C.H.I.M.P. doesn't mean it can't punch like an A.P.E.
@@ -719,7 +737,7 @@
     price: 750
 
 - type: entity
-  name: energy shotgun
+  name: PRJ-150/200/120-LP energy shotgun
   parent: [BaseWeaponBattery, BaseGunWieldable, BaseGrandTheftContraband]
   id: WeaponEnergyShotgun
   description: A one-of-a-kind prototype energy weapon that uses various shotgun configurations. It offers the possibility of both lethal and non-lethal shots, making it a versatile weapon.

@@ -1,0 +1,35 @@
+- type: entity
+  name: LSE-150-HP assault laser rifle
+  parent: [BaseWeaponBattery, BaseGunWieldable, BaseSecurityContraband]
+  id: WeaponAssaultLaserRifle
+  description: A primary laser weapon of Security. Known for it's great capacity.
+  components:
+  - type: Battery
+    maxCharge: 4500
+    startingCharge: 4500
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Battery/assault.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-0
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Clothing
+    sprite: Ronstation/Objects/Weapons/Guns/Battery/assault.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
+    fireRate: 2.5
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    - FullAuto
+  - type: HitscanBatteryAmmoProvider
+    proto: RedLaserWeak
+    fireCost: 150
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: true
+  - type: Appearance
