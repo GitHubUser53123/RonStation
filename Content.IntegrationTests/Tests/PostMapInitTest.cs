@@ -66,6 +66,7 @@ namespace Content.IntegrationTests.Tests
             "Loop",
             "Plasma",
             "Elkridge",
+            "Convex",
             "Saltern2",
             "Cluster2",
             "Atlas2"
