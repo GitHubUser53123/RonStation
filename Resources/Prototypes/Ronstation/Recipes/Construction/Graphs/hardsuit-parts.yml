@@ -1,0 +1,16 @@
+- type: constructionGraph
+  id: BasicHardsuitGraph
+  start: start
+  graph:
+
+  - node: start
+    actions:
+    - !type:PlaySound
+      sound: /Audio/Mecha/mechmove03.ogg
+      completed:
+    - !type:SpawnPrototype
+      prototype: BaseHardsuitPartBodyAttachedLeftArm
+      amount: 1
+      steps:
+      - prototype: BaseHardsuitPartLeftArm
+        doAfter: 1

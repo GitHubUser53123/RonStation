@@ -1,0 +1,39 @@
+- type: entity
+  parent: BaseItem
+  id: BaseHardsuitPartBody
+  name: basic hardsuit body
+  description: The base body part for your future hardsuit.
+  suffix: hardsuit construction
+  components:
+  - type: Sprite
+    sprite: Ronstation/Clothing/OuterClothing/basic_parts.rsi
+    state: base
+  - type: Item
+    size: Huge
+  - type: Construction
+    graph: BasicHardsuitGraph
+    node: start
+
+- type: entity
+  parent: BaseHardsuitPartBody
+  id: BaseHardsuitPartLeftArm
+  name: basic hardsuit left arm
+  description: The left arm part for your future hardsuit.
+  components:
+  - type: Sprite
+    sprite: Ronstation/Clothing/OuterClothing/basic_parts.rsi
+    state: leftarm
+  - type: Item
+    size: Small
+
+- type: entity
+  parent: BaseHardsuitPartBody
+  id: BaseHardsuitPartBodyAttachedLeftArm # i dont like doing it like this but oh well i dont know any better
+  name: basic hardsuit body
+  description: The base body for your hardsuit, with left arm attached.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/basic.rsi
+    state: leftarm
+  - type: Item
+    size: Small
