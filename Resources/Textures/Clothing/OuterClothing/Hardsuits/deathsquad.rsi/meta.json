@@ -11,6 +11,18 @@
       "name": "icon"
     },
     {
+      "name": "base"
+    },
+    {
+      "name": "leftarm"
+    },
+    {
+      "name": "rightarm"
+    },
+    {
+      "name": "rightleg"
+    },
+    {
       "name": "equipped-OUTERCLOTHING",
       "directions": 4
     },
